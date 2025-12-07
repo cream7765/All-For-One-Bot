@@ -10,7 +10,7 @@ const error = require("../../functions/error");
 const response = require("../../functions/response");
 module.exports = {
     name: "play",
-    description: "پخش موزیک در ویس چنل.",
+    description: "Play music in voice channel",
     category: "music",
     type: ApplicationCommandType.ChatInput,
     cooldown: 5,
@@ -23,7 +23,7 @@ module.exports = {
     only_message: true,
     options: [{
         name: "track",
-        description: "لطفا نام خواننده یا آهنگ و یا لینک وارد کنید.",
+        description: "Enter artist name, song name, or URL",
         type: ApplicationCommandOptionType.String,
         required: true
     }],
@@ -85,7 +85,7 @@ module.exports = {
                 }
             });
 
-            return await response(interaction, { content: `This object founded **${track.title}** from **${track.author}**!` });
+            return await response(interaction, { content: `Now playing **${track.title}** by **${track.author}**!` });
         } catch (e) {
             error(e);
         }

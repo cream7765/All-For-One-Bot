@@ -7,7 +7,7 @@ const error = require("../../functions/error");
 const editResponse = require("../../functions/editResponse");
 module.exports = {
   name: "ping",
-  description: "پینگ بات",
+  description: "Check bot latency and response time",
   category: "misc",
   type: ApplicationCommandType.ChatInput,
   cooldown: 5,
