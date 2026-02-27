@@ -5,7 +5,7 @@ const error = require("../../functions/error");
 const copyRight = require("../../storage/copyRight.json");
 module.exports = {
   name: "add",
-  description: "کوین دادن به بقیه.",
+  description: "Add coins to a user's wallet (Owner only)",
   category: "owner",
   cooldown: 5,
   aliases: [],
@@ -30,31 +30,31 @@ module.exports = {
       const cash = args[1];
       if (!user) {
         return await interaction.reply({
-          content: `❌| این یوزر مورد تایید نمیباشد دوباره تلاش کنید.`
+          content: `❌| Invalid user specified. Please try again.`
         });
       };
       if (user.bot) {
         return await interaction.reply({
-          content: `❌| ربات ها مورد تایید نیستند دوباره تلاش کنید.`
+          content: `❌| Bots cannot receive coins. Please try again.`
         });
       };
 
 
       if (!await db.has(`users.${user.id}`)) {
         return await interaction.reply({
-          content: `❌| پروفایل یوزر مورد نظر یافت نشد.`
+          content: `❌| User profile not found.`
         });
       };
 
       if (!cash) {
         return await interaction.reply({
-          content: `❌| لطفا مبلغ کوین را وارد کنید.`
+          content: `❌| Please specify the coin amount.`
         });
       };
 
       if (isNaN(cash)) {
         return await interaction.reply({
-          content: `❌| لطفا از اعداد استفاده کنید.`
+          content: `❌| Please use a valid number.`
         });
       };
 
@@ -63,21 +63,21 @@ module.exports = {
       const embed = new EmbedBuilder()
         .setColor("Green")
         .setTitle("Economy | Add")
-        .setDescription("به پروفایل یوزر مورد نظر کوین ها واریز شد.")
+        .setDescription("Coins successfully added to user's wallet.")
         .setFooter({ text: `Owner Embed • ${copyRight.footerText}` })
         .setThumbnail(interaction.author.displayAvatarURL({ forceStatic: true }))
         .addFields([{
-          name: "مبلغ واریزی:",
-          value: `${cash.toLocaleString()} 🪙`,
-          inline: true
-        }, {
-          name: "یوزر:",
-          value: `${user}`,
-          inline: true
-        }, {
-          name: "کیف پول:",
-          value: `${profile.wallet.toLocaleString()} 🪙`,
-          inline: true
+            name: "Amount Added:",
+            value: `${cash.toLocaleString()} 🪙`,
+            inline: true
+          }, {
+            name: "User:",
+            value: `${user}`,
+            inline: true
+          }, {
+            name: "New Balance:",
+            value: `${profile.wallet.toLocaleString()} 🪙`,
+            inline: true
         }])
         .setTimestamp();
 

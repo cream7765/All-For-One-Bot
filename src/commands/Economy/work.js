@@ -7,7 +7,7 @@ const error = require("../../functions/error");
 const copyRight = require("../../storage/copyRight.json");
 module.exports = {
   name: "work",
-  description: "انجام کار و دریافت حقوق.",
+  description: "Work and earn money",
   category: "economy",
   type: ApplicationCommandType.ChatInput,
   cooldown: 60 * 60,
@@ -32,7 +32,7 @@ module.exports = {
         await interaction.deferReply({ ephemeral: true });
         const cmd = client.application.commands.cache.find(c => c.name === "register");
         return await interaction.editReply({
-          content: `❌| شما هیچ پروفایلی در بات ندارید.\n(با استفاده از کامند </${cmd.name}:${cmd.id}> برای خود پروفایل بسازید.)`
+          content: `❌| You don't have any profile in the bot.\n(Use the </${cmd.name}:${cmd.id}> command to create a profile for yourself.)`
         });
       };
 
@@ -43,19 +43,19 @@ module.exports = {
       const embed = new EmbedBuilder()
         .setColor("Green")
         .setTitle("Economy | Work")
-        .setDescription("شما با موفقیت تایم کاری خود را انجام دادید!!")
+        .setDescription("You successfully completed your work shift!!")
         .setFooter({ text: `Economy Embed • ${copyRight.footerText}` })
         .setThumbnail(interaction.user.displayAvatarURL({ forceStatic: true }))
         .addFields([{
-          name: "مبلغ واریزی:",
+          name: "Deposit Amount:",
           value: `${deposit.toLocaleString()} 🪙`,
           inline: true
         }, {
-          name: "سطح کار:",
+          name: "Work Level:",
           value: `${profile.work} Level 💼`,
           inline: true
         }, {
-          name: "کیف پول:",
+          name: "Wallet:",
           value: `${profile.wallet.toLocaleString()} 🪙`,
           inline: true
         }])

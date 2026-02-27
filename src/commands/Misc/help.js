@@ -10,7 +10,7 @@ const copyRight = require("../../storage/copyRight.json");
 const { prefix } = require("../../../config");
 module.exports = {
   name: "help",
-  description: "دستورات بات",
+  description: "Shows all available bot commands",
   category: "misc",
   aliases: ["h"],
   type: ApplicationCommandType.ChatInput,
@@ -40,17 +40,17 @@ module.exports = {
         name: `${client.user.username} Help`
       })
       .setFooter({
-        text: `درخواست شده توسط ${author.user.tag}`,
+        text: `Requested by ${author.user.tag}`,
         iconURL: author.user.displayAvatarURL({ dynamic: true })
       })
       .setColor("#2B2D31")
       .addFields([{
-        name: "درباره من:",
-        value: `>>> درود من ${client.user.username} هستم.\nمن یک ربات فان و مدیریتی هستم که به ادمین ها کمک میکنم راحت تر سرور رو مدیریت کنند و همچنین به ممبر ها کمک میکنم داخل سرور سرگرم بشوند و در حل مشکلاتشون کمک کنم.`,
+        name: "About me:",
+        value: `>>> Hello! I'm ${client.user.username}.\nI'm a fun and moderation bot that helps admins manage servers more easily and also helps members have fun and solve their problems.`,
         inline: false
       }, {
-        name: "دیدن دستورات من:",
-        value: ">>> برای دیدن تمام دستورات من میتوانید به منوی زیر این پیام کلیک کنید و بر اساس کتگوری مورد نظر کامند های اون بخش رو ببینید.",
+        name: "See my commands:",
+        value: ">>> To see all my commands, you can click on the menu below this message and view commands from the category you want.",
         inline: false
       }])
       .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
@@ -75,7 +75,7 @@ module.exports = {
     const helpMenu = new StringSelectMenuBuilder()
       .setCustomId("help_menu")
       .setMaxValues(1)
-      .setPlaceholder("رو من کلیک کن!!")
+      .setPlaceholder("Click on me!!")
       .addOptions(menu_options);
 
     const homeButton = new ButtonBuilder()
@@ -106,11 +106,11 @@ module.exports = {
               const embed = new EmbedBuilder()
                 .setThumbnail(client.user.displayAvatarURL({ dynamic: true }))
                 .setAuthor({
-                  name: `امبد کمک ${client.user.username}`
+                  name: `${client.user.username} Help Embed`
                 })
                 .setTitle(`${value}`)
                 .setFooter({
-                  text: `درخواست شده توسط ${author.user.tag}`,
+                  text: `Requested by ${author.user.tag}`,
                   iconURL: author.user.displayAvatarURL({ dynamic: true })
                 })
                 .setColor("#2B2D31")
@@ -129,7 +129,7 @@ module.exports = {
                     description += `\n\n**${cmd.only_slash ?
                       `</${element.name}:${command.id}>` : ""}${cmd.only_message ?
                         `${prefix}${element.name} ${cmd.usage ? cmd.usage : ""}` : ""}${cmd.aliases && cmd.aliases.length > 0 ?
-                          `\nنام های مستعار: [${cmd.aliases.map(a => `\`${a}\``).join(", ")}]` : ""}\nتوضیحات: \`${element.description}\`**`;
+                          `\nAliases: [${cmd.aliases.map(a => `\`${a}\``).join(", ")}]` : ""}\nتوضیحات: \`${element.description}\`**`;
                   });
                 } else {
                   description += `\n\n**${cmd.only_slash ?
@@ -138,7 +138,7 @@ module.exports = {
                         `\nنام های مستعار: [${cmd.aliases.map(a => `\`${a}\``).join(", ")}]` : ""}\nتوضیحات: \`${cmd.description}\`**`;
                 }
               });
-              embed.setDescription(`${description ? description : "`بدون دستورات پیام.`"}`);
+              embed.setDescription(`${description ? description : "`No message commands.`"}`);
               return int.update({
                 embeds: [embed],
                 components: [new ActionRowBuilder().addComponents(helpMenu.setDisabled(false).setOptions(menu_options.filter(a=> a.value !== value))), new ActionRowBuilder().addComponents(homeButton.setDisabled(false))]
@@ -148,7 +148,7 @@ module.exports = {
         }
       } else {
         return interaction.reply({
-          content: `این دکمه فقط برای ${author.user} میباشد و شما اجازه استفاده از آن را ندارید.\nبرای استفاده از دکمه ها بهتر است کامند رو به رو را فراخوانی کنید: "${`</${client.application.commands.cache.find(c => c.name === "help").name}:${client.application.commands.cache.find(c => c.name === "help").id}>`}"`,
+          content: `This button is only for ${author.user} and you don't have permission to use it.\nFor using buttons, it's better to run this command: "${`</${client.application.commands.cache.find(c => c.name === "help").name}:${client.application.commands.cache.find(c => c.name === "help").id}>`}"`,
           ephemeral: true
         })
       }

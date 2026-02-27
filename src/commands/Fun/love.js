@@ -7,7 +7,7 @@ const copyRight = require("../../storage/copyRight.json");
 const error = require("../../functions/error");
 module.exports = {
   name: "love",
-  description: "میزان عشق و علاقت نسبت به یکی رو میسنجم.",
+  description: "Calculate love percentage between you and another user",
   category: "fun",
   cooldown: 5,
   type: ApplicationCommandType.ChatInput,
@@ -20,7 +20,7 @@ module.exports = {
   options: [{
     name: "user",
     type: ApplicationCommandOptionType.User,
-    description: "یک یوزر انتخاب کنید.",
+    description: "Select a user to calculate love with",
     required: true
   }],
 
@@ -34,9 +34,9 @@ module.exports = {
   run: async (client, interaction, args) => {
     try {
       const target = interaction.options.getUser("user");
-      if (target.id === interaction.user.id) return interaction.reply("**لطفا یکی دیگه را منشن کنید**")
+      if (target.id === interaction.user.id) return interaction.reply("**Please select someone else!**")
       const random = Math.floor(Math.random() * 99) + 1;
-      const embed = new EmbedBuilder().setColor("Purple").setDescription(`**${interaction.user}** درصد عشق شما به **${target}**, **%${random}** است`).setFooter({ text: `درخواست شده توسط ${interaction.user.username} • ${copyRight.footerText}`, iconURL: copyRight.footerIcon });
+      const embed = new EmbedBuilder().setColor("Purple").setDescription(`**${interaction.user}**, your love percentage with **${target}** is **${random}%** 💕`).setFooter({ text: `Requested by ${interaction.user.username} • ${copyRight.footerText}`, iconURL: copyRight.footerIcon });
       if (random >= 50) {
         embed.setThumbnail('https://cdn.discordapp.com/attachments/944668553439760434/1098155294707695616/image.png')
       } else {

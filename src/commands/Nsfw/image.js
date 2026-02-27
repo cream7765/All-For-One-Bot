@@ -5,7 +5,7 @@ const types = require("../../storage/nsfw/nekoApiTypes.json");
 const getDataFromNeko = require("../../functions/getDataFromNeko");
 module.exports = {
     name: "image",
-    description: "دریافت تصاویر حق از api و نشان دادن آن به صورت رندوم.",
+    description: "Get random adult images from API",
     category: "nsfw",
     cooldown: 5,
     user_permissions: ["SendMessages"],
@@ -24,14 +24,14 @@ module.exports = {
      */
     run: async (client, interaction, args) => {
         try {
-            if (!interaction.channel.nsfw) return interaction.reply({ content: `پسر خوب اینجا که برای بچه سالاست پاشو برو چنل هایی که NSFW اش روشن باهشه موش کور.` });
+            if (!interaction.channel.nsfw) return interaction.reply({ content: `This command can only be used in NSFW channels! Go find an appropriate channel, you naughty person! 😉` });
 
             const type = types[Math.floor(Math.random() * types.length)];
             const data = await getDataFromNeko(type);
             try {
                 if (data.message) {
                     return await interaction.reply({
-                        embeds: [new EmbedBuilder().setColor("#2B2D31").setTitle(`تصاویر حق و آغشته به پورن به صورت شانسی`).setDescription(`مراقب چشات باش`).setTimestamp().setImage(data.message).setFooter({ text: copyRight.footerText, iconURL: copyRight.footerIcon })]
+                        embeds: [new EmbedBuilder().setColor("#2B2D31").setTitle(`Random Adult Images`).setDescription(`Enjoy responsibly! 🔥`).setTimestamp().setImage(data.message).setFooter({ text: copyRight.footerText, iconURL: copyRight.footerIcon })]
                     })
                 };
             } catch (e) {

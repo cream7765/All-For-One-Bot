@@ -4,7 +4,7 @@ const copyRight = require("../../storage/copyRight.json");
 const fs = require("fs");
 module.exports = {
     name: "video",
-    description: "دریافت و ارسال ویدیو های حق.",
+    description: "Get and send adult videos",
     category: "nsfw",
     cooldown: 5,
     user_permissions: ["SendMessages"],
@@ -23,7 +23,7 @@ module.exports = {
      */
     run: async (client, interaction, args) => {
         try {
-            if (!interaction.channel.nsfw) return interaction.reply({ content: `پسر خوب اینجا که برای بچه سالاست پاشو برو چنل هایی که NSFW اش روشن باهشه موش کور.` });
+            if (!interaction.channel.nsfw) return interaction.reply({ content: `This command can only be used in NSFW channels! Go find an appropriate channel, you naughty person! 😉` });
             
             // const files = fs.readFileSync("./src/storage/nsfw").filter(file => file.endsWith(".json") && file !== "nekoApiTypes.json");
             // const file = files[Math.floor(Math.random() * files.length)];
@@ -32,7 +32,7 @@ module.exports = {
             const video = videos[Math.floor(Math.random() * videos.length)];
             const hideURL = "||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​||||​|| _ _ _ _ _ _ ";
             return await interaction.reply({
-                content: `محتوای شما یافت شد یا حق ✋🏻 (مواظب باش خودتو خفه نکنی)\n${hideURL}${video}`
+                content: `Adult content found! ✋🏻 (Watch yourself, don't get too excited!)\n${hideURL}${video}`
             })
         } catch (e) {
             error(e);

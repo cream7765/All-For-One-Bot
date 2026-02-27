@@ -6,7 +6,7 @@ const error = require("../../functions/error");
 
 module.exports = {
   name: "setactivity",
-  description: "تغییر موقت استاتوس بات.",
+  description: "Change bot status temporarily (Owner only)",
   category: "owner",
   type: ApplicationCommandType.ChatInput,
   cooldown: 5,
@@ -19,7 +19,7 @@ module.exports = {
   options: [{
     name: "status",
     type: ApplicationCommandOptionType.String,
-    description: "استاتوس را انتخاب کنید.",
+    description: "Choose the bot's status",
     choices: [{
       name: "Do Not Distrub",
       value: "dnd"
@@ -36,7 +36,7 @@ module.exports = {
   }, {
     name: "activity-type",
     type: ApplicationCommandOptionType.String,
-    description: "نوع فعالیت بات را انتخاب کنید.",
+    description: "Choose the activity type",
     choices: [{
       name: "Competing",
       value: "Competing"
@@ -56,11 +56,11 @@ module.exports = {
   }, {
     name: "activity-name",
     type: ApplicationCommandOptionType.String,
-    description: "متن فعالیت را بنویسید."
+    description: "Enter the activity text",
   }, {
     name: "stream-url",
     type: ApplicationCommandOptionType.String,
-    description: "برای نشان دادن لینک استریم در استاتوس یک لینک وارد کنید."
+    description: "Enter a streaming URL (only needed for Streaming activity)",
   }],
 
   /**
@@ -93,7 +93,7 @@ module.exports = {
       });
       return await interaction.reply({
         ephemeral: true,
-        content: `✅| استاتوس ربات به صورت موقت تغییر یافت.`
+        content: `✅| Bot status changed successfully!`
       })
     } catch (e) {
       error(e)

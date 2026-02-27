@@ -7,7 +7,7 @@ const error = require("../../functions/error");
 const copyRight = require("../../storage/copyRight.json");
 module.exports = {
   name: "profile",
-  description: "دیدن پروفایل خود یا دیگران در بات.",
+  description: "View your profile or others in the bot",
   category: "economy",
   type: ApplicationCommandType.ChatInput,
   cooldown: 10,
@@ -20,7 +20,7 @@ module.exports = {
   options: [{
     name: "user",
     type: ApplicationCommandOptionType.User,
-    description: "یک یوزر انتخاب کنید."
+    description: "Select a user to view their profile"
   }],
 
   /**
@@ -39,48 +39,48 @@ module.exports = {
         if (user.bot) {
           await interaction.deferReply({ ephemeral: true });
           return await interaction.editReply({
-            content: `❌| ربات ها نمیتوانند پروفایل داشته باشند.`
+            content: `❌| Bots cannot have profiles.`
           });
         };
 
         if (!await db.has(`users.${user.id}`)) {
           await interaction.deferReply({ ephemeral: true });
           return await interaction.editReply({
-            content: `❌| یوزر مورد نظر پروفایلی در بات ندارد.`
+            content: `❌| The specified user doesn't have a profile in the bot.`
           });
         };
 
         await interaction.deferReply({ ephemeral: false });
         const profile = await db.get(`users.${user.id}`);
         const embed = new EmbedBuilder()
-          .setAuthor({ name: `درخواست شده توسط ${interaction.user.tag}`, iconURL: interaction.user.displayAvatarURL({ forceStatic: true }) })
+          .setAuthor({ name: `Requested by ${interaction.user.tag}`, iconURL: interaction.user.displayAvatarURL({ forceStatic: true }) })
           .setColor("Aqua")
           .setTitle("Economy | Profile")
-          .setDescription("پروفایل یوزر مورد نظر با موفقیت یافت شد.")
+          .setDescription("User profile found successfully.")
           .setFooter({ text: `Economy Embed • ${copyRight.footerText}` })
           .setThumbnail(user.displayAvatarURL({ forceStatic: true }))
           .addFields([{
-            name: "یوزر:",
+            name: "User:",
             value: `${user}`,
             inline: true
           }, {
-            name: "کیف پول:",
+            name: "Wallet:",
             value: `${profile.wallet.toLocaleString()} 🪙`,
             inline: true
           }, {
-            name: "سطح کار:",
+            name: "Work Level:",
             value: `${profile.work} Level 💼`,
             inline: true
           }, {
-            name: "سطح دزدی:",
+            name: "Rob Level:",
             value: `${profile.rob} Level 🔦`,
             inline: true
           }, {
-            name: "سطح خانه:",
+            name: "Home Level:",
             value: `${profile.home} Level 🏡`,
             inline: true
           }, {
-            name: "سطح ماینر:",
+            name: "Miner Level:",
             value: `${profile.miner} Level ⛏`,
             inline: true
           }])
@@ -94,7 +94,7 @@ module.exports = {
           await interaction.deferReply({ ephemeral: true });
           const cmd = client.application.commands.cache.find(c => c.name === "register");
           return await interaction.editReply({
-            content: `❌| شما هیچ پروفایلی در بات ندارید.\n(با استفاده از کامند </${cmd.name}:${cmd.id}> برای خود پروفایل بسازید.)`
+            content: `❌| You don't have any profile in the bot.\n(Use the </${cmd.name}:${cmd.id}> command to create a profile for yourself.)`
           });
         };
 
@@ -104,7 +104,7 @@ module.exports = {
         const embed = new EmbedBuilder()
           .setColor("Aqua")
           .setTitle("Economy | Profile")
-          .setDescription("پروفایل شما با موفقیت یافت شد.")
+          .setDescription("Your profile found successfully.")
           .setFooter({ text: `Economy Embed • ${copyRight.footerText}` })
           .setThumbnail(interaction.user.displayAvatarURL({ forceStatic: true }))
           .addFields([{

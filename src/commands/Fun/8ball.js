@@ -8,7 +8,7 @@ const copyRight = require("../../storage/copyRight.json");
 const error = require("../../functions/error");
 module.exports = {
     name: "8ball",
-    description: "من توپ شانسم هر سوالی ازم داری بپرس.",
+    description: "Ask the magic 8-ball any question!",
     category: "fun",
     type: ApplicationCommandType.ChatInput,
     cooldown: 5,
@@ -20,7 +20,7 @@ module.exports = {
     only_message: false,
     options: [{
         name: "question",
-        description: "سوال خود را بنویسید.",
+        description: "Ask your question to the magic 8-ball",
         type: ApplicationCommandOptionType.String,
         required: true
     }],
@@ -38,7 +38,7 @@ module.exports = {
             await interaction.deferReply({ ephemeral: false });
             const answer = eightball[Math.floor(Math.random() * Math.floor(eightball.length))];
             return await interaction.editReply({
-                embeds: [new EmbedBuilder().setColor("Blue").setAuthor({ name: `درخواست  شده توسط ${interaction.user.username}`, iconURL: interaction.user.displayAvatarURL({ dynamic: true }) }).setTitle(`🎱| 8ball`).addFields({ name: "سوال:", value: question }, { name: "جواب:", value: answer }).setFooter({ text: `${copyRight.footerText}`, iconURL: copyRight.footerIcon })]
+                embeds: [new EmbedBuilder().setColor("Blue").setAuthor({ name: `Requested by ${interaction.user.username}`, iconURL: interaction.user.displayAvatarURL({ dynamic: true }) }).setTitle(`🎱| 8ball`).addFields({ name: "Question:", value: question }, { name: "Answer:", value: answer }).setFooter({ text: `${copyRight.footerText}`, iconURL: copyRight.footerIcon })]
             });
         } catch (e) {
             error(e);
