@@ -1,0 +1,57 @@
+{
+  "name": "Study Advanced Layout",
+  "description": "AI-planned advanced layout for a study Discord server with onboarding, activity, and support spaces.",
+  "categories": [
+    {
+      "name": "study-start-here-9",
+      "channels": [
+        {
+          "name": "study-rules",
+          "type": "text"
+        },
+        {
+          "name": "study-announcements",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "study-main-9",
+      "channels": [
+        {
+          "name": "study-study-chat",
+          "type": "text"
+        },
+        {
+          "name": "study-resources",
+          "type": "text"
+        },
+        {
+          "name": "Focus Room",
+          "type": "voice"
+        }
+      ]
+    },
+    {
+      "name": "study-extras-9",
+      "channels": [
+        {
+          "name": "study-homework-help",
+          "type": "text"
+        },
+        {
+          "name": "study-goals",
+          "type": "text"
+        },
+        {
+          "name": "Pomodoro VC",
+          "type": "voice"
+        },
+        {
+          "name": "Group Study",
+          "type": "voice"
+        }
+      ]
+    }
+  ]
+}

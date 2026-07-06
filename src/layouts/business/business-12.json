@@ -1,0 +1,57 @@
+{
+  "name": "Business Moderation Layout",
+  "description": "AI-planned moderation layout for a business Discord server with onboarding, activity, and support spaces.",
+  "categories": [
+    {
+      "name": "business-start-here-12",
+      "channels": [
+        {
+          "name": "business-rules",
+          "type": "text"
+        },
+        {
+          "name": "business-announcements",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "business-main-12",
+      "channels": [
+        {
+          "name": "business-networking",
+          "type": "text"
+        },
+        {
+          "name": "business-resources",
+          "type": "text"
+        },
+        {
+          "name": "Meeting Room",
+          "type": "voice"
+        }
+      ]
+    },
+    {
+      "name": "business-extras-12",
+      "channels": [
+        {
+          "name": "business-projects",
+          "type": "text"
+        },
+        {
+          "name": "business-support",
+          "type": "text"
+        },
+        {
+          "name": "Workshop VC",
+          "type": "voice"
+        },
+        {
+          "name": "Networking VC",
+          "type": "voice"
+        }
+      ]
+    }
+  ]
+}

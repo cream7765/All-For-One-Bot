@@ -1,0 +1,57 @@
+{
+  "name": "Anime Moderation Layout",
+  "description": "AI-planned moderation layout for a anime Discord server with onboarding, activity, and support spaces.",
+  "categories": [
+    {
+      "name": "anime-start-here-12",
+      "channels": [
+        {
+          "name": "anime-rules",
+          "type": "text"
+        },
+        {
+          "name": "anime-announcements",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "anime-main-12",
+      "channels": [
+        {
+          "name": "anime-anime-chat",
+          "type": "text"
+        },
+        {
+          "name": "anime-manga-talk",
+          "type": "text"
+        },
+        {
+          "name": "Watch Party",
+          "type": "voice"
+        }
+      ]
+    },
+    {
+      "name": "anime-extras-12",
+      "channels": [
+        {
+          "name": "anime-fan-art",
+          "type": "text"
+        },
+        {
+          "name": "anime-recommendations",
+          "type": "text"
+        },
+        {
+          "name": "Manga Lounge",
+          "type": "voice"
+        },
+        {
+          "name": "Chill VC",
+          "type": "voice"
+        }
+      ]
+    }
+  ]
+}

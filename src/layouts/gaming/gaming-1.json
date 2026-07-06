@@ -1,0 +1,57 @@
+{
+  "name": "Gaming Starter Layout",
+  "description": "AI-planned starter layout for a gaming Discord server with onboarding, activity, and support spaces.",
+  "categories": [
+    {
+      "name": "gaming-start-here-1",
+      "channels": [
+        {
+          "name": "gaming-rules",
+          "type": "text"
+        },
+        {
+          "name": "gaming-announcements",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "gaming-main-1",
+      "channels": [
+        {
+          "name": "gaming-game-chat",
+          "type": "text"
+        },
+        {
+          "name": "gaming-looking-for-team",
+          "type": "text"
+        },
+        {
+          "name": "Lobby",
+          "type": "voice"
+        }
+      ]
+    },
+    {
+      "name": "gaming-extras-1",
+      "channels": [
+        {
+          "name": "gaming-clips",
+          "type": "text"
+        },
+        {
+          "name": "gaming-patch-notes",
+          "type": "text"
+        },
+        {
+          "name": "Duo Queue",
+          "type": "voice"
+        },
+        {
+          "name": "Squad Voice",
+          "type": "voice"
+        }
+      ]
+    }
+  ]
+}

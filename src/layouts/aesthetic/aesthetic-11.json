@@ -1,0 +1,57 @@
+{
+  "name": "Aesthetic Content Layout",
+  "description": "AI-planned content layout for a aesthetic Discord server with onboarding, activity, and support spaces.",
+  "categories": [
+    {
+      "name": "aesthetic-start-here-11",
+      "channels": [
+        {
+          "name": "aesthetic-rules",
+          "type": "text"
+        },
+        {
+          "name": "aesthetic-announcements",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "aesthetic-main-11",
+      "channels": [
+        {
+          "name": "aesthetic-moodboard",
+          "type": "text"
+        },
+        {
+          "name": "aesthetic-gallery",
+          "type": "text"
+        },
+        {
+          "name": "Studio",
+          "type": "voice"
+        }
+      ]
+    },
+    {
+      "name": "aesthetic-extras-11",
+      "channels": [
+        {
+          "name": "aesthetic-outfits",
+          "type": "text"
+        },
+        {
+          "name": "aesthetic-inspo",
+          "type": "text"
+        },
+        {
+          "name": "Gallery Talk",
+          "type": "voice"
+        },
+        {
+          "name": "Chill VC",
+          "type": "voice"
+        }
+      ]
+    }
+  ]
+}

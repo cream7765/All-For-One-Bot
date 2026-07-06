@@ -1,0 +1,57 @@
+{
+  "name": "Gaming Social Layout",
+  "description": "AI-planned social layout for a gaming Discord server with onboarding, activity, and support spaces.",
+  "categories": [
+    {
+      "name": "gaming-start-here-6",
+      "channels": [
+        {
+          "name": "gaming-rules",
+          "type": "text"
+        },
+        {
+          "name": "gaming-announcements",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "gaming-main-6",
+      "channels": [
+        {
+          "name": "gaming-game-chat",
+          "type": "text"
+        },
+        {
+          "name": "gaming-looking-for-team",
+          "type": "text"
+        },
+        {
+          "name": "Lobby",
+          "type": "voice"
+        }
+      ]
+    },
+    {
+      "name": "gaming-extras-6",
+      "channels": [
+        {
+          "name": "gaming-clips",
+          "type": "text"
+        },
+        {
+          "name": "gaming-patch-notes",
+          "type": "text"
+        },
+        {
+          "name": "Duo Queue",
+          "type": "voice"
+        },
+        {
+          "name": "Squad Voice",
+          "type": "voice"
+        }
+      ]
+    }
+  ]
+}
