@@ -1,0 +1,57 @@
+{
+  "name": "Community Content Layout",
+  "description": "AI-planned content layout for a community Discord server with onboarding, activity, and support spaces.",
+  "categories": [
+    {
+      "name": "community-start-here-11",
+      "channels": [
+        {
+          "name": "community-rules",
+          "type": "text"
+        },
+        {
+          "name": "community-announcements",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "community-main-11",
+      "channels": [
+        {
+          "name": "community-introductions",
+          "type": "text"
+        },
+        {
+          "name": "community-general",
+          "type": "text"
+        },
+        {
+          "name": "Lounge",
+          "type": "voice"
+        }
+      ]
+    },
+    {
+      "name": "community-extras-11",
+      "channels": [
+        {
+          "name": "community-media",
+          "type": "text"
+        },
+        {
+          "name": "community-suggestions",
+          "type": "text"
+        },
+        {
+          "name": "Event Voice",
+          "type": "voice"
+        },
+        {
+          "name": "Music Room",
+          "type": "voice"
+        }
+      ]
+    }
+  ]
+}

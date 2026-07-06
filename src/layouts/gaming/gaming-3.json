@@ -1,0 +1,57 @@
+{
+  "name": "Gaming Competitive Layout",
+  "description": "AI-planned competitive layout for a gaming Discord server with onboarding, activity, and support spaces.",
+  "categories": [
+    {
+      "name": "gaming-start-here-3",
+      "channels": [
+        {
+          "name": "gaming-rules",
+          "type": "text"
+        },
+        {
+          "name": "gaming-announcements",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "gaming-main-3",
+      "channels": [
+        {
+          "name": "gaming-game-chat",
+          "type": "text"
+        },
+        {
+          "name": "gaming-looking-for-team",
+          "type": "text"
+        },
+        {
+          "name": "Lobby",
+          "type": "voice"
+        }
+      ]
+    },
+    {
+      "name": "gaming-extras-3",
+      "channels": [
+        {
+          "name": "gaming-clips",
+          "type": "text"
+        },
+        {
+          "name": "gaming-patch-notes",
+          "type": "text"
+        },
+        {
+          "name": "Duo Queue",
+          "type": "voice"
+        },
+        {
+          "name": "Squad Voice",
+          "type": "voice"
+        }
+      ]
+    }
+  ]
+}

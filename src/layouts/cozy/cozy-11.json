@@ -1,0 +1,57 @@
+{
+  "name": "Cozy Content Layout",
+  "description": "AI-planned content layout for a cozy Discord server with onboarding, activity, and support spaces.",
+  "categories": [
+    {
+      "name": "cozy-start-here-11",
+      "channels": [
+        {
+          "name": "cozy-rules",
+          "type": "text"
+        },
+        {
+          "name": "cozy-announcements",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "cozy-main-11",
+      "channels": [
+        {
+          "name": "cozy-cozy-chat",
+          "type": "text"
+        },
+        {
+          "name": "cozy-daily-checkin",
+          "type": "text"
+        },
+        {
+          "name": "Cafe VC",
+          "type": "voice"
+        }
+      ]
+    },
+    {
+      "name": "cozy-extras-11",
+      "channels": [
+        {
+          "name": "cozy-pets",
+          "type": "text"
+        },
+        {
+          "name": "cozy-comfort-media",
+          "type": "text"
+        },
+        {
+          "name": "Quiet Room",
+          "type": "voice"
+        },
+        {
+          "name": "Sleepy VC",
+          "type": "voice"
+        }
+      ]
+    }
+  ]
+}

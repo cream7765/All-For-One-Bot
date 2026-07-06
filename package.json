@@ -5,8 +5,12 @@
   "main": "index.js",
   "license": "BSD-3-Clause",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test": "npm run lint",
+    "start": "node index.js",
+    "lint": "eslint .",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "prepare": "husky"
   },
   "dependencies": {
     "@discord-player/extractor": "^7.0.0-dev.4",
@@ -28,5 +32,10 @@
     "quick.db": "^9.1.7",
     "write-file-atomic": "^5.0.1",
     "youtube-ext": "^1.1.25"
+  },
+  "devDependencies": {
+    "eslint": "^9.17.0",
+    "prettier": "^3.4.2",
+    "husky": "^9.1.7"
   }
 }

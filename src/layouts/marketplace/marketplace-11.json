@@ -1,0 +1,57 @@
+{
+  "name": "Marketplace Content Layout",
+  "description": "AI-planned content layout for a marketplace Discord server with onboarding, activity, and support spaces.",
+  "categories": [
+    {
+      "name": "marketplace-start-here-11",
+      "channels": [
+        {
+          "name": "marketplace-rules",
+          "type": "text"
+        },
+        {
+          "name": "marketplace-announcements",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "marketplace-main-11",
+      "channels": [
+        {
+          "name": "marketplace-buy-sell",
+          "type": "text"
+        },
+        {
+          "name": "marketplace-vouches",
+          "type": "text"
+        },
+        {
+          "name": "Trade Talk",
+          "type": "voice"
+        }
+      ]
+    },
+    {
+      "name": "marketplace-extras-11",
+      "channels": [
+        {
+          "name": "marketplace-price-check",
+          "type": "text"
+        },
+        {
+          "name": "marketplace-support",
+          "type": "text"
+        },
+        {
+          "name": "Support VC",
+          "type": "voice"
+        },
+        {
+          "name": "Deal Room",
+          "type": "voice"
+        }
+      ]
+    }
+  ]
+}
